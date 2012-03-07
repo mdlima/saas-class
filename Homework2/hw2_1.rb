@@ -17,3 +17,14 @@ class Numeric
   end
 end
 
+class String
+  def palindrome?()
+    self.downcase.gsub(/\W/,"").reverse == self.downcase.gsub(/\W/,"")
+  end
+end
+
+module Enumerable
+  def palindrome?()
+    self.to_s.palindrome?
+  end
+end
